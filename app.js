@@ -4,7 +4,7 @@ var dotenv=require('dotenv');
 var mongo=require('mongodb');
 var MongoClient=mongo.MongoClient;
 dotenv.config();
-const mongoUrl=process.env.MongoLiveUrl;
+const mongoUrl='mongodb+srv://deepika:deepika@cluster0.ugmwb.mongodb.net/?retryWrites=true&w=majority';
 var cors=require('cors');
 const bodyParser=require('body-parser');
 
