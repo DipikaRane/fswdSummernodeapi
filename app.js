@@ -93,7 +93,20 @@ app.get('/features/:id',(req,res)=>{
         res.send(result)
     })
 })
+app.get('/doctor/:id',(req,res)=>{
+    var id=Number(req.params.id);
+    db.collection('doctor').find({"_id":id}).toArray((err,result)=>{
+        if(err) throw err;
+        res.send(result)
+    })
+})
 
+app.get('/doctor',(req,res)=>{
+    db.collection('doctor').find().toArray((err,result)=>{
+        if(err) throw err;
+        res.send(result)
+    })
+})
 app.get('/appointment',(req,res)=>{
     db.collection('orders').find().toArray((err,result)=>{
         if(err) throw err;
