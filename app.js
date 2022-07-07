@@ -73,6 +73,17 @@ app.get('/city',(req,res)=>{
         res.send(result)
     })
 })
+app.get('/dept',(req,res)=>{
+    var query={};
+    //console.log(req.query.city);
+    if(req.query.city && req.query.feature){
+        query={state_id:Number(req.query.city),"location.location_id":Number(req.query.feature)}
+    }
+    db.collection('location').find(query).toArray((err,result)=>{
+        if(err) throw err
+        res.send(result)
+    })
+})
 
 app.get('/services/:id',(req,res)=>{
     var id=parseInt(req.params.id);
