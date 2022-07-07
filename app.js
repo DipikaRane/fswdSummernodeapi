@@ -79,7 +79,7 @@ app.get('/dept',(req,res)=>{
     if(req.query.city && req.query.feature){
         query={state_id:Number(req.query.city),"location.location_id":Number(req.query.feature)}
     }
-    db.collection('location').find(query).toArray((err,result)=>{
+    db.collection('services').find(query).toArray((err,result)=>{
         if(err) throw err
         res.send(result)
     })
