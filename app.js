@@ -77,7 +77,7 @@ app.get('/dept',(req,res)=>{
     var query={};
     //console.log(req.query.city);
     if(req.query.location){
-        query={id:Number(req.query.location)}
+        query={"location.location_id":Number(req.query.location)}
     }
     db.collection('services').find(query).toArray((err,result)=>{
         if(err) throw err
